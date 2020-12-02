@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   tableId: {
-    type: Number,
+    type: String,
     required: true,
   },
   capacity: {
-    type: String,
+    type: Number,
     required: true,
   },
 });

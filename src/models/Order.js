@@ -2,12 +2,16 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   orderId: {
-    type: Number,
+    type: String,
     required: true,
   },
-  table: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Table',
+  // table: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'Table',
+  //   required: true,
+  // },
+  tableId: {
+    type: String,
     required: true,
   },
   guestNumber: {
@@ -18,22 +22,25 @@ const schema = new mongoose.Schema({
     product: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Product',
-      required: true,
     },
     quantity: {
-      type: String,
-      required: true,
+      type: Number,
+      required: false,
     },
     subtotal: {
       type: Number,
-      required: true,
+      required: false,
     },
-    timestamps: true,
+  },
+  {
+    timestamps: false,
   }],
   totalAmount: {
     type: Number,
-    required: true,
+    required: false,
   },
+},
+{
   timestamps: true,
 });
 
